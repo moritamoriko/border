@@ -11,3 +11,4 @@ gem "redcarpet", "~> 3.0.0"
 gem "builder", "~> 3.0"
 
 gem "middleman-livereload"
+gem "nokogiri"
