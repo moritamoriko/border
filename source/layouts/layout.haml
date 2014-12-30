@@ -6,8 +6,19 @@
     %title
       Blog Title#{' - ' + current_article.title unless current_article.nil?}
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
-  %body
-    #main{:role => "main"}
+  %body{class: page_classes}
+    .header
+      =image_tag('title.png', class: "header__image")
+      %h1.header__title= data.site.title
+      %h2.header__white
+        @moriko_o
+      %ul
+        %li
+          = link_to( "home", "http://livedoor.com", target: "_blank", class: "header__links")
+        %li
+          = link_to( "archive", "http://yahoo.co.jp", target: "_blank", class: "header__links")
+        %li
+          = link_to( "product", "http://yahoo.co.jp", target: "_blank", class: "header__links")
       = yield
     %aside
       %h2 Recent Articles
