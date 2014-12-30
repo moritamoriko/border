@@ -62,6 +62,11 @@ page "/feed.xml", layout: false
 # Helpers
 ###
 
+activate :directory_indexes
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
+set :haml, { :ugly => true, :format => :html5 }
+
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
@@ -83,6 +88,9 @@ set :images_dir, 'images'
 
 # Build-specific configuration
 configure :build do
+
+  # activate :minify_html
+
   # For example, change the Compass output style for deployment
   # activate :minify_css
 

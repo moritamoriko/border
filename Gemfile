@@ -6,9 +6,9 @@ gem "middleman", "~> 3.3.7"
 gem "middleman-blog", "~> 3.5.3"
 
 gem "redcarpet", "~> 3.0.0"
+gem "middleman-minify-html"
+gem "middleman-livereload"
+gem "nokogiri"
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
-
-gem "middleman-livereload"
-gem "nokogiri"
