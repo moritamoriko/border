@@ -1,0 +1,99 @@
+//TOPのログインボタン
+.button-login-wrapper
+  max-width: 400px
+  margin: 0 auto
+  padding: 0 10px
+.button-login
+  display: block
+  width: 100%
+  height: 70px
+  background-color: $red
+  border: 1px solid $dark-red
+  +border-radius(6px)
+  text-align: center
+  text-decoration: none
+  color: $white
+  position: relative
+  line-height: 70px
+  cursor: pointer
+  @media screen and (max-width: #{$break-point})
+    height: 60px
+    line-height: 60px
+  &:hover
+    background-color: lighten($red, 4%)
+    text-decoration: none
+.button-login__text
+  +inline-block
+.button-login__icon
+  font-size: 42px
+  +inline-block
+
+
+//投稿ボタン
+.button-register
+  margin: 0 auto
+  display: block
+  width: 180px
+  height: 40px
+  background-color: $aqua
+  border: 1px solid $dark-aqua
+  +border-radius(4px)
+  text-align: center
+  text-decoration: none
+  color: $white
+  position: relative
+  line-height: 40px
+  font-family: "Hiragino Kaku Gothic ProN",Meiryo,sans-serif
+  font-size: 100%
+  cursor: pointer
+  +appearance(none)
+  //@media screen and (max-width: #{$break-point})
+  //  width: 50%
+  &:hover
+    background-color: lighten($aqua, 4%)
+    text-decoration: none
+
+
+//tweetボタン
+.tweet-button
+  float: left
+  width: 60px
+  height: 60px
+  +border-radius(50%)
+  text-align: center
+  margin-right: 30px
+  @media screen and (max-width: #{$break-point})
+    width: 40px
+    height: 40px
+    margin-right: 14px
+
+//緑
+.tweet-button-aqua
+  background-color: $aqua
+  &:hover
+    background-color: lighten($aqua, 4%)
+    text-decoration: none
+
+//白
+.tweet-button-white
+  background-color: $white
+  &:hover
+    background-color: $pale-gray
+    text-decoration: none
+
+//アイコン
+.aqua-tweet-button__icon
+  color: $white
+  font-size: 36px
+  line-height: 60px
+  @media screen and (max-width: #{$break-point})
+    font-size: 20px
+    line-height: 40px
+
+.white-tweet-button__icon
+  color: $ivory
+  font-size: 36px
+  line-height: 60px
+  @media screen and (max-width: #{$break-point})
+    font-size: 20px
+    line-height: 40px
