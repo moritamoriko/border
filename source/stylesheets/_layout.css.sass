@@ -12,10 +12,9 @@ img
   max-width: 100%
   height: auto
 
-.contener
+.main-contents
   margin: 0 auto
   width: 1200px
-
 
 header
   margin: 0 auto
@@ -38,7 +37,7 @@ header
   font-size: 14px
   color: $keycolor-01
 
-nav
+.nav
   text-align: center
   margin-bottom: 40px
 
@@ -58,14 +57,41 @@ nav
   color: $textcolor
   text-decoration: underline
 
-.aside
+.footer-contents
+  min-height: 300px
   margin-top: 40px
+  background: $bgcolor-02 image_url("fotter-contents_bg.png") repeat-x
+
+.aside
+  margin: 0 auto
+  width: 1200px
 
 .aside__contents
   margin: 0 auto
   +clearfix
 
 .aside__menu
+  margin-top: 20px
   +inline-block
   +float-left
   width: 33%
+
+.menu__title
+  color: $keycolor-01
+  font-weight: bold
+  font-size: 26px
+  margin-bottom: 14px
+
+.menu__lists
+  line-height: 2.0
+
+.menu__link
+  color: $textcolor
+  text-decoration: underline
+
+.footer
+  display: block
+  background-color: $bgcolor-02
+  padding-top: 30px
+  padding-bottom: 20px
+  text-align: center

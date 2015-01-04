@@ -8,12 +8,11 @@
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
     = stylesheet_link_tag "application"
   %body{class: page_classes}
-    .contener
+    .main-contents
       %header.header
         =image_tag('title.png', class: "header__image")
         %h1.header__title= data.site.title
-        %h2.header__white
-          @moriko_o
+        %h2.header__white= data.site.twitter_id
       %nav.nav
         %ul.nav__lists
           %li
@@ -23,20 +22,25 @@
           %li
             = link_to( "product", "http://yahoo.co.jp", target: "_blank", class: "nav__link")
       = yield
+    %footer.footer-contents
       %aside.aside
         %ul.aside__contents
           %li.aside__menu
-            %h2 Recent Articles
+            %h2.menu__title entry
             - blog.articles[0...10].each do |article|
-              %p
-                = link_to article.title, article
+              %p.menu__lists
+                = link_to(article.title, article, class: "menu__link")
                 %span= article.date.strftime('%b %e')
           %li.aside__menu
-            %h2 Tags
+            %h2.menu__title tag
             - blog.tags.each do |tag, articles|
-              %p= link_to "#{tag} (#{articles.size})", tag_path(tag)
+              %p.menu__lists
+                = link_to( "#{tag} (#{articles.size})", tag_path(tag), class: "menu__link")
           %li.aside__menu
-            %h2 By Year
+            %h2.menu__title year
             - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-              %p= link_to "#{year} (#{articles.size})", blog_year_path(year)
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              %p.menu__lists= link_to("#{year} (#{articles.size})", blog_year_path(year), class: "menu__link")
+    %small.footer
+      Copyright©
+      = link_to( "@#{data.site.twitter_id}", "https://twitter.com/#{data.site.twitter_id}/", target: "_blank", class: "white-link" )
+      2015 All Rights Reserved.
