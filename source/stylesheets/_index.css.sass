@@ -1,2 +1,40 @@
+.blog-entry
+  margin-bottom: 40px
+
+.blog-entry__time
+  font-size: 24px
+  color: $keycolor-02
+
 .blog-entry__title
   color: $keycolor-01
+  margin-bottom: 10px
+
+.blog-entry__link
+  font-size: 30px
+  font-weight: bold
+  color: $keycolor-01
+  text-decoration: none
+
+.blog-entry__article
+  font-size: 16px
+  line-height: 2.0
+
+.blog-entry__footer
+  margin-top: 20px
+  text-align: right
+
+.blog-entry__read-more
+  +inline-block
+  +border-radius(4px)
+  width: 160px
+  height: 50px
+  background-color: $keycolor-01
+  font-size: 24px
+  color: $white
+  text-align: center
+  line-height: 50px
+  text-decoration: none
+  cursor: pointer
+  &:hover
+    background-color: lighten($keycolor-01, 4%)
+    text-decoration: none
