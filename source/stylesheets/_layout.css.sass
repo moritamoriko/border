@@ -12,40 +12,60 @@ img
   max-width: 100%
   height: auto
 
+.contener
+  margin: 0 auto
+  width: 1200px
 
-.header
+
+header
   margin: 0 auto
   text-align: center
 
-img.header__image
+.header__image
   margin-top: 30px
   margin-bottom: 10px
 
-.header__links
-  color: $textcolor
-  text-decolation: underline
-
-h1.header__title
+.header__title
   margin: 0
   text-align: center
   font-size: 30px
   color: $keycolor-01
   line-height: 34px
 
-h2.header__white
+.header__white
   margin: 0
   text-align: center
   font-size: 14px
   color: $keycolor-01
 
-h2.blogtitle
-h2.blogtitle a
-  text-decoration: none
-  color: $keycolor-01
+nav
+  text-align: center
+  margin-bottom: 40px
 
-.header ul
+.nav__lists
   font-size: 24px
   color: $textcolor
 
-.header li
-  display: inline-block
+.nav__lists li
+  +inline-block
+  &:after
+    content: " |"
+  &:last-child
+    &:after
+      content: none
+
+.nav__link
+  color: $textcolor
+  text-decoration: underline
+
+.aside
+  margin-top: 40px
+
+.aside__contents
+  margin: 0 auto
+  +clearfix
+
+.aside__menu
+  +inline-block
+  +float-left
+  width: 33%

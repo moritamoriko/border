@@ -6,32 +6,37 @@
     %title
       Blog Title#{' - ' + current_article.title unless current_article.nil?}
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+    = stylesheet_link_tag "application"
   %body{class: page_classes}
-    .header
-      =image_tag('title.png', class: "header__image")
-      %h1.header__title= data.site.title
-      %h2.header__white
-        @moriko_o
-      %ul
-        %li
-          = link_to( "home", "http://livedoor.com", target: "_blank", class: "header__links")
-        %li
-          = link_to( "archive", "http://yahoo.co.jp", target: "_blank", class: "header__links")
-        %li
-          = link_to( "product", "http://yahoo.co.jp", target: "_blank", class: "header__links")
-      = yield
-    %aside
-      %h2 Recent Articles
-      %ol
-        - blog.articles[0...10].each do |article|
+    .contener
+      %header.header
+        =image_tag('title.png', class: "header__image")
+        %h1.header__title= data.site.title
+        %h2.header__white
+          @moriko_o
+      %nav.nav
+        %ul.nav__lists
           %li
-            = link_to article.title, article
-            %span= article.date.strftime('%b %e')
-      %h2 Tags
-      %ol
-        - blog.tags.each do |tag, articles|
-          %li= link_to "#{tag} (#{articles.size})", tag_path(tag)
-      %h2 By Year
-      %ol
-        - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-          %li= link_to "#{year} (#{articles.size})", blog_year_path(year)
+            = link_to( "home", "http://livedoor.com", target: "_blank", class: "nav__link")
+          %li
+            = link_to( "archive", "http://yahoo.co.jp", target: "_blank", class: "nav__link")
+          %li
+            = link_to( "product", "http://yahoo.co.jp", target: "_blank", class: "nav__link")
+      = yield
+      %aside.aside
+        %ul.aside__contents
+          %li.aside__menu
+            %h2 Recent Articles
+            - blog.articles[0...10].each do |article|
+              %p
+                = link_to article.title, article
+                %span= article.date.strftime('%b %e')
+          %li.aside__menu
+            %h2 Tags
+            - blog.tags.each do |tag, articles|
+              %p= link_to "#{tag} (#{articles.size})", tag_path(tag)
+          %li.aside__menu
+            %h2 By Year
+            - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+              %p= link_to "#{year} (#{articles.size})", blog_year_path(year)
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
