@@ -8,6 +8,7 @@ gem "middleman-blog", "~> 4.0"
 gem "redcarpet", "~> 3.4"
 gem "middleman-minify-html"
 gem "middleman-livereload"
+gem "middleman-compass"
 gem "nokogiri"
 
 # For feed.xml.builder
