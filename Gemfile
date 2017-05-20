@@ -5,12 +5,14 @@ source 'http://rubygems.org'
 gem "middleman", "~> 4.2"
 gem "middleman-blog", "~> 4.0"
 
-gem "redcarpet", "~> 3.4"
-gem "middleman-minify-html"
-gem "middleman-livereload"
 gem "middleman-compass"
-gem "nokogiri"
+gem "middleman-livereload"
+gem "middleman-minify-html"
+gem "middleman-syntax"
+
 gem "haml", "~> 4.0" # Compatibility issue with Haml 5.x. See https://github.com/middleman/middleman/issues/2087
+gem "nokogiri"
+gem "redcarpet", "~> 3.4"
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"

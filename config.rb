@@ -52,6 +52,16 @@ configure :development do
   activate :livereload
 end
 
+# Markdown settings
+set :markdown_engine, :redcarpet
+set :markdown, fenced_code_blocks: true, smartypants: true
+
+# Syntax highlight settings
+activate :syntax
+
+# Activate Directory Indexes
+activate :directory_indexes
+
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper
