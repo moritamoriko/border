@@ -10,6 +10,7 @@ gem "middleman-minify-html"
 gem "middleman-livereload"
 gem "middleman-compass"
 gem "nokogiri"
+gem "haml", "~> 4.0" # Compatibility issue with Haml 5.x. See https://github.com/middleman/middleman/issues/2087
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
